@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appnew</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <div class="navbar-inner">
+  	<img alt="Rails" src="/assets/rails.png" />
+    <div class="container">
+    	<%= link_to "sample app", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-left">
+          <li><%= link_to "Users",    'users' %></li>
+          <li><%= link_to "New User",    'users/new' %></li>
+        </ul>
+        <ul class="nav pull-right">
+          <a href="#" class="btn btn-large btn-primary">Sign up now!</a>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</head>
+<body>
+
+<div class="container">
+	<%= yield %>
+	
+</div>
+</body>
+</html>
