@@ -1,5 +1,15 @@
-<h1>New user</h1>
+<% provide(:title, 'Sign up') %>
 
-<%= render 'form' %>
+<h1>Sign up</h1>
+<div class="row">
+  <div class="span6 offset3">
 
-<%= link_to 'Back', users_path %>
+  	
+  	<%= render 'form' %>
+  	<%= link_to 'Back', users_path , class: "btn btn-large btn-back" %>
+
+  </div>
+</div>
+
+
+

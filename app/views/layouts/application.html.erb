@@ -6,26 +6,30 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <div class="navbar-inner">
-  	<img alt="Rails" src="/assets/rails.png" />
-    <div class="container">
-    	<%= link_to "sample app", '#', id: "logo" %>
+  <%= link_to "My application", '#', id: "titlelogo" %>
+  <img alt="Rails" src="/assets/rails.png" />
+  </div>
+  	<div class="navbar-inner">
       <nav>
         <ul class="nav pull-left">
           <li><%= link_to "Users",    'users' %></li>
           <li><%= link_to "New User",    'users/new' %></li>
         </ul>
         <ul class="nav pull-right">
-          <a href="#" class="btn btn-large btn-primary">Sign up now!</a>
+          <a href="users" class="btn btn-large btn-primary">Sign up now!</a>
         </ul>
       </nav>
     </div>
   </div>
 </head>
 <body>
-
-<div class="container">
-	<%= yield %>
-	
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
 </div>
 </body>
 </html>
